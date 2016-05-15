@@ -25,3 +25,5 @@ E:\Git\Winterdream\Gaia\obj\Debug\Gaia_MarkupCompile.cache
 E:\Git\Winterdream\Gaia\obj\Debug\Gaia.g.resources
 E:\Git\Winterdream\Gaia\obj\Debug\Gaia.Properties.Resources.resources
 E:\Git\Winterdream\Gaia\obj\Debug\Gaia.csproj.GenerateResource.Cache
+E:\Git\Winterdream\Gaia\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Git\Winterdream\Gaia\obj\Debug\Gaia_MarkupCompile.lref

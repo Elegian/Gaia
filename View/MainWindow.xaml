@@ -1,31 +1,43 @@
 ﻿<Window x:Class="Gaia.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="900" Width="900">
-    <Grid>
-        <TabControl x:Name="tabControl" Margin="180,86,0.6,35.4"/>
-        <TreeView x:Name="treeView" Margin="0,86,0,35.4" HorizontalAlignment="Left" Width="180"/>
-        <StatusBar Height="35" Margin="0,0,0.6,0.4" VerticalAlignment="Bottom"/>
-        <TabControl x:Name="tabControl1" HorizontalAlignment="Left" Height="86" VerticalAlignment="Top" Width="884">
-            <TabItem Header="Start" FontSize="15" >
-                <Grid Height="Auto" Width="Auto" Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem Header="Datei" FontSize="15">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem Header="Ablaufsteuerung" FontSize="15">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem Header="Kompilieren" FontSize="15">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem Header="Methoden" FontSize="15">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem Header="Hilfe" FontSize="15">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-        </TabControl>
+        xmlns:local="clr-namespace:Gaia.ViewModel"
+        Title="Gaia" Height="900" Width="900">
 
+    <Grid>
+        <TabControl x:Name="tabControl" Margin="180,115,0.6,35.4"/>
+        <TreeView x:Name="treeView" Margin="0,115,0,35.4" HorizontalAlignment="Left" Width="180" Loaded="treeView_Loaded"/>
+        <StatusBar Height="35" Margin="0,0,0.6,0.4" VerticalAlignment="Bottom"/>
+        <Ribbon x:Name="ribbonbar" VerticalAlignment="Top" Height="131" Margin="0,0,0.6,0" Background="White" Loaded="ribbonbar_Loaded">
+            
+            <!-- Nobody likes the AuxiliaryPane -->
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu Visibility="Collapsed"/>
+            </Ribbon.ApplicationMenu>
+            <!-- TODO: localization of header -->
+            <RibbonTab>
+                <RibbonTab.Header>
+                    <RibbonTabHeader Content="Datei" Background="#173290" Foreground="White"/>
+                </RibbonTab.Header>
+            </RibbonTab>
+            <RibbonTab Header="Ablaufsteuerung">
+                <!-- TODO: Add buttons and bind them -->
+                <RibbonGroup Header="Test23" Margin="0,1,0,9.8" >
+                    <RibbonButton  Label="Test" Height="55" Width="55" LargeImageSource="/Images/GNU.svg.png"/>
+                    <RibbonButton  Label="Test" Height="55" Width="55" LargeImageSource="/Images/GNU.svg.png"/>
+                    <RibbonButton  Label="Test" Height="55" Width="55" LargeImageSource="/Images/GNU.svg.png"/>
+                    <RibbonButton  Label="Test" Height="55" Width="55" LargeImageSource="/Images/GNU.svg.png"/>
+                </RibbonGroup>
+                <RibbonGroup Header="Test" Margin="0,1,0,9.8" >
+                    <RibbonButton  Label="Test" Height="55" Width="55" LargeImageSource="/Images/GNU.svg.png"/>
+                    <RibbonButton  Label="Test" Height="55" Width="55" LargeImageSource="/Images/GNU.svg.png"/>
+                    <RibbonButton  Label="Test" Height="55" Width="55" LargeImageSource="/Images/GNU.svg.png"/>
+                    <RibbonButton  Label="Test" Height="55" Width="55" LargeImageSource="/Images/GNU.svg.png"/>
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="Kompilieren"/>
+            <RibbonTab Header="Programmieren"/>
+            <RibbonTab Header="Hilfe"/>
+        </Ribbon>
     </Grid>
 </Window>
