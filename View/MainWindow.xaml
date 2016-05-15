@@ -2,11 +2,11 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:Gaia.ViewModel"
-        Title="Gaia" Height="900" Width="900">
+        Title="Gaia" Height="900" Width="900" MinHeight="900" MinWidth="900">
 
     <Grid>
         <TabControl x:Name="tabControl" Margin="180,115,0.6,35.4"/>
-        <TreeView x:Name="treeView" Margin="0,115,0,35.4" HorizontalAlignment="Left" Width="180" Loaded="treeView_Loaded"/>
+        <TreeView x:Name="treeView" Margin="0,115,0,35.4" HorizontalAlignment="Left" Width="180" Loaded="treeView_Loaded" MouseDoubleClick="treeView_MouseDoubleClick" />
         <StatusBar Height="35" Margin="0,0,0.6,0.4" VerticalAlignment="Bottom"/>
         <Ribbon x:Name="ribbonbar" VerticalAlignment="Top" Height="131" Margin="0,0,0.6,0" Background="White" Loaded="ribbonbar_Loaded">
             

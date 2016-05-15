@@ -15,24 +15,8 @@ namespace Gaia.ViewModel
     {
         #region Properties
         public TreeView treeView;
-        private TreeViewItem tv;
+        public TabControl tabControl;
         #endregion
-
-        #region ctor
-        public MainViewModel()
-        {
-            
-        }
-        #endregion
-
-
-        #region currentProject
-        public void currentProject()
-        {
-            treeView.Items.Add(ProcessDirectory(Directory.GetCurrentDirectory()));
-        }
-        #endregion
-
 
         #region ProcessDirectory
         private TreeViewItem ProcessDirectory(string targetDirectory)
@@ -68,5 +52,59 @@ namespace Gaia.ViewModel
             return dir;
         }
         #endregion
+
+        
+        #region ctor
+        public MainViewModel()
+        {
+            
+        }
+        #endregion
+
+        #region Public Methods
+
+        #region currentProject
+        public void currentProject()
+        {
+            treeView.Items.Add(ProcessDirectory(Directory.GetCurrentDirectory()));
+        }
+        #endregion
+
+        public void openFile()
+        {
+            try
+            {
+
+                if (treeView.SelectedItem != null)
+                {
+                    TreeViewItem a = treeView.SelectedItem as TreeViewItem;
+                    string name = a.Header.ToString();
+                    bool notShown = true;
+                    foreach (TabItem t in tabControl.Items)
+                    {
+                        if(t.Header.ToString() == name)
+                        {
+                            t.IsSelected = true;
+                            notShown = false;
+                            break;
+                        }
+                    }
+                    if (notShown)
+                    {
+                        TabItem ti = new TabItem();
+                        ti.Header = name;
+                        tabControl.Items.Add(ti);
+                        ti.IsSelected = true;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                // TODO Logg
+            }
+        }
+
+        #endregion
+
     }
 }

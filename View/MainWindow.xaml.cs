@@ -13,7 +13,6 @@ namespace Gaia
     /// </summary>
     public partial class MainWindow : Window
     {
-        private TreeView tv;
         ViewModel.MainViewModel mvm;
         public MainWindow()
         {
@@ -21,7 +20,7 @@ namespace Gaia
             mvm = new ViewModel.MainViewModel();
             this.DataContext = mvm;
             mvm.treeView = this.treeView;
-            
+            mvm.tabControl = this.tabControl;
         }
 
         private void ribbonbar_Loaded(object sender, RoutedEventArgs e)
@@ -37,6 +36,11 @@ namespace Gaia
         private void treeView_Loaded(object sender, RoutedEventArgs e)
         {
             mvm.currentProject();
+        }
+
+        private void treeView_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            mvm.openFile();
         }
     }
 }
